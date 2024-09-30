@@ -48,7 +48,7 @@ always @(posedge clk)
 						alu_out0  <= mul_val[3:0];
 						alu_out1  <= mul_val[7:4];
 					end
-	                        ALU_AND:
+				ALU_AND:
 					begin
 						alu_out0  <= a & b;
 					end
@@ -56,7 +56,7 @@ always @(posedge clk)
 					begin
 						alu_out0  <= a | b;
 					end
-                                ALU_XOR:
+				ALU_XOR:
 					begin
 						alu_out0  <= a ^ b;
 					end
