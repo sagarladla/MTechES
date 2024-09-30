@@ -31,14 +31,14 @@ initial
 	end
 alu UUT
 (
-	.clk(),
-	.rst(),
-	.a(),
-	.b(),
-	.opn(),
+	.clk(clk),
+	.rst(rst),
+	.a(a),
+	.b(b),
+	.opn(opn),
 	
-	.alu_out0(),
-	.alu_out1(),
-	.status()
+	.alu_out0(alu_out0),
+	.alu_out1(alu_out1),
+	.status(status)
 );
 endmodule
