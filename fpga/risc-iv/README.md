@@ -1,3 +1,3 @@
-# RISC-IV
+# risc-iv
 
-### 4-bit RISCV Processor
+### 4-bit RISC-V Core
