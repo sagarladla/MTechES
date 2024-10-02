@@ -11,7 +11,7 @@ wire [3:0] alu_out0, alu_out1, status;
 // which is equal to 100 MHz clock
 always #5 clk = ~clk;
 
-initial
+initial 
 	begin
 		clk = 0;
 		rst = 1;

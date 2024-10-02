@@ -1,0 +1,4 @@
+Dependencies for Project 'armv4t', Target 'Target 1': (DO NOT MODIFY !)
+F (.\LPC2300.s)(0x559CFDE8)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 526"--list .\listings\lpc2300.lst --xref -o .\objects\lpc2300.o --depend .\objects\lpc2300.d)
+F (.\q1_program.c)(0x66FD9F7C)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="526"-o .\objects\q1_program.o --omf_browse .\objects\q1_program.crf --depend .\objects\q1_program.d)
+I (C:\Keil_v5\ARM\INC\Philips\lpc23xx.h)(0x559CFE30)
