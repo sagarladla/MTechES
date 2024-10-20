@@ -5,9 +5,9 @@ vlib work
 vlog -work work *.v
 
 # simulate the file
-vsim work.tb_cu
+vsim work.ffnn_tb
 
-add wave -position insertpoint sim:/tb_cu/UUT/*
+add wave -position insertpoint sim:/ffnn_tb/UUT/*
 
 # Run the simulation
 # run -all

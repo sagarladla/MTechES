@@ -23,51 +23,48 @@ wire [4:0] add_val;
 wire [4:0] sub_val;
 wire [7:0] mul_val;
 
-always @(posedge clk)
-	begin
-		if (rst)
-			begin
-				alu_out0 <= 'h0;
-				alu_out1 <= 'h0;
-				status	 <= 'h0;
-			end
-		else
-			begin
-				case (opn)
-					ALU_ADD:
-						begin
-							alu_out0  <= add_val[3:0];
-							status[1] <= add_val[4];
-						end
-					ALU_SUB:
-						begin
-							alu_out0  <= sub_val[3:0];
-							status[1] <= sub_val[4];
-						end
-					ALU_MUL:
-						begin
-							alu_out0  <= mul_val[3:0];
-							alu_out1  <= mul_val[7:4];
-						end
-					ALU_AND:
-						begin
-							alu_out0  <= a & b;
-						end
-					ALU_OR:
-						begin
-							alu_out0  <= a | b;
-						end
-					ALU_XOR:
-						begin
-							alu_out0  <= a ^ b;
-						end
-					ALU_LT:
-						begin
-							status[2] <= (a < b) ? 1'b1 : 1'b0;
-						end
-				endcase
-			end
+always @(posedge clk) begin
+	if (rst) begin
+		alu_out0 <= 'h0;
+		alu_out1 <= 'h0;
+		status	 <= 'h0;
 	end
+	else begin
+		case (opn)
+			ALU_ADD:
+				begin
+					alu_out0  <= add_val[3:0];
+					status[1] <= add_val[4];
+				end
+			ALU_SUB:
+				begin
+					alu_out0  <= sub_val[3:0];
+					status[1] <= sub_val[4];
+				end
+			ALU_MUL:
+				begin
+					alu_out0  <= mul_val[3:0];
+					alu_out1  <= mul_val[7:4];
+				end
+			ALU_AND:
+				begin
+					alu_out0  <= a & b;
+				end
+			ALU_OR:
+				begin
+					alu_out0  <= a | b;
+				end
+			ALU_XOR:
+				begin
+					alu_out0  <= a ^ b;
+				end
+			ALU_LT:
+				begin
+					status[2] <= (a < b) ? 1'b1 : 1'b0;
+				end
+		endcase
+	end
+end
 assign add_val = a + b;
 assign sub_val = a - b;
 assign mul_val = a * b;

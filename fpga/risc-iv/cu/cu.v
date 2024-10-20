@@ -21,79 +21,78 @@ parameter ALU_LT	= 4'b0110;
 parameter LOAD		= 4'b0111;
 parameter STORE		= 4'b1000;
 
-always @(posedge clk)
-	if (rst) 
-		begin
-			reg_write	<= 1'b0;
-			alu_src		<= 1'b0;
-			mem_read	<= 1'b0;
-			mem_write	<= 1'b0;
-			mem_to_reg	<= 1'b0;
-			alu_opn		<= 3'd0;
-		end
-	else
-		begin
-			reg_write	<= 1'b0;
-			alu_src		<= 1'b0;
-			mem_read	<= 1'b0;
-			mem_write	<= 1'b0;
-			mem_to_reg	<= 1'b0;
-			alu_opn		<= 3'd0;
-			case (opcode)
-				ALU_ADD:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b000;
-					end
-				ALU_SUB:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b001;
-					end
-				ALU_MUL:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b010;
-					end
-				ALU_AND:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b011;
-					end
-				ALU_OR:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b100;
-					end
-				ALU_XOR:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b101;
-					end
-				ALU_LT:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b0;
-						alu_opn		<= 3'b110;
-					end
-				LOAD:
-					begin
-						reg_write	<= 1'b1;
-						alu_src		<= 1'b1;
-						mem_read	<= 1'b1;
-						mem_to_reg	<= 1'b1;
-					end
-				STORE:
-					begin
-						alu_src		<= 1'b1;
-						mem_write	<= 1'b1;
-					end
-			endcase
-		end
+always @(posedge clk) begin
+	if (rst) begin
+		reg_write	<= 1'b0;
+		alu_src		<= 1'b0;
+		mem_read	<= 1'b0;
+		mem_write	<= 1'b0;
+		mem_to_reg	<= 1'b0;
+		alu_opn		<= 3'd0;
+	end
+	else begin
+		reg_write	<= 1'b0;
+		alu_src		<= 1'b0;
+		mem_read	<= 1'b0;
+		mem_write	<= 1'b0;
+		mem_to_reg	<= 1'b0;
+		alu_opn		<= 3'd0;
+		case (opcode)
+			ALU_ADD:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b000;
+				end
+			ALU_SUB:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b001;
+				end
+			ALU_MUL:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b010;
+				end
+			ALU_AND:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b011;
+				end
+			ALU_OR:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b100;
+				end
+			ALU_XOR:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b101;
+				end
+			ALU_LT:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b0;
+					alu_opn		<= 3'b110;
+				end
+			LOAD:
+				begin
+					reg_write	<= 1'b1;
+					alu_src		<= 1'b1;
+					mem_read	<= 1'b1;
+					mem_to_reg	<= 1'b1;
+				end
+			STORE:
+				begin
+					alu_src		<= 1'b1;
+					mem_write	<= 1'b1;
+				end
+		endcase
+	end
+end
 endmodule

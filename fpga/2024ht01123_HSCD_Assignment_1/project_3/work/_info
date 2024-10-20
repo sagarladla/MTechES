@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/sagar/MTechES/fpga/project_3
+vffnn
+Z1 !s110 1728750893
+!i10b 1
+!s100 5H[T1^6:JjGdX<RhBV:fL3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IB8iQ]>cT;_ihCoH7LVIoH2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1728750751
+8ffnn.v
+Fffnn.v
+!i122 33
+L0 1 91
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1728750893.000000
+!s107 ffnn_tb.v|ffnn.v|
+Z6 !s90 -reportprogress|300|-work|work|ffnn.v|ffnn_tb.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vffnn_tb
+R1
+!i10b 1
+!s100 kKO?di^D`d]`2Pz:<JdcW3
+R2
+I<XiUMXgMBZ514RC>I1CYY1
+R3
+R0
+w1728750857
+8ffnn_tb.v
+Fffnn_tb.v
+!i122 33
+L0 1 101
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 ffnn_tb.v|ffnn.v|
+R6
+!i113 1
+R7
+R8

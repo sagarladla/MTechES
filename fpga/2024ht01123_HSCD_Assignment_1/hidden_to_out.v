@@ -1,0 +1,59 @@
+module hidden_to_out(
+	// hidden input layer
+	input [7:0] h0,
+	input [7:0] h1,
+	input [7:0] h2,
+	
+	// out_0 weights
+	input [7:0] h0w0,
+	input [7:0] h1w0,
+	input [7:0] h2w0,
+	
+	// out_1 weights
+	input [7:0] h0w1,
+	input [7:0] h1w1,
+	input [7:0] h2w1,
+	
+	// out_0 bias
+	input [7:0] out_0b,
+	// out_1 bias
+	input [7:0] out_1b,
+	
+	// output layer
+	output reg [7:0] out_0,
+	output reg [7:0] out_1
+);
+// temporary input wires to hold input * weight products of SOP part
+// for output neuron 0
+wire [15:0] out_00;
+wire [15:0] out_01;
+wire [15:0] out_02;
+// for output neuron 1
+wire [15:0] out_10;
+wire [15:0] out_11;
+wire [15:0] out_12;
+
+// temporary input wires to hold summation of all input * weight
+wire [11:0] out_0_sum;
+wire [11:0] out_1_sum;
+
+assign out_00 = h0 * h0w0;
+assign out_01 = h1 * h1w0;
+assign out_02 = h2 * h2w0;
+
+assign out_10 = h0 * h0w1;
+assign out_11 = h1 * h1w1;
+assign out_12 = h2 * h2w1;
+
+assign out_0_sum = out_00[15:8] + out_01[15:8] + out_02[15:8] + out_0b;
+assign out_1_sum = out_10[15:8] + out_11[15:8] + out_12[15:8] + out_1b;
+
+assign out_0 = relu(out_0_sum[11:4]);
+assign out_1 = relu(out_1_sum[11:4]);
+
+function [7:0] relu(input [7:0] sigma);
+	begin
+		relu = (sigma > 0) ? sigma : 0;
+	end
+endfunction
+endmodule
